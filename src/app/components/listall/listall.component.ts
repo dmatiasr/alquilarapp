@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { PropertyService } from '../../services/property.service/property.service'
 
 @Component({
     selector: 'list-all',
@@ -7,12 +8,20 @@ import { ActivatedRoute } from '@angular/router';
     styleUrls: ['./listall.component.css']
 })
 export class ListAllComponent {
-    constructor(private route: ActivatedRoute){
+    properties = []
+    
+    constructor(private route: ActivatedRoute, private propertyService : PropertyService){
 
+    }
+
+    getProperties(typeProperty): void{
+        this.properties = this.propertyService.getProperty(typeProperty);
     }
 
     ngOnInit(): void {
         let propertyType = this.route.snapshot.paramMap.get('typeProperty');
         console.log(propertyType)
+        this.getProperties(propertyType);
+        console.log(this.properties);
     }
 }

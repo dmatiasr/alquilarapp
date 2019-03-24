@@ -1,13 +1,14 @@
 import { Injectable } from '@angular/core';
 import { constructDependencies } from '@angular/core/src/di/reflective_provider';
 
-@Injectable()
+@Injectable(
+)
 export class PropertyService{ 
     allProperty = [
         {"id":1,"name":"Casa Quinta","type":"casa","description":"","lat":"", "lon":"","related_sector":"","available":"","updated_at":"","updated_by":"","created_at":"", "created_by":"" },
         {"id":2,"name":"Abuelitos","type":"casa","description":"","lat":"", "lon":"","related_sector":"","available":"","updated_at":"","updated_by":"","created_at":"", "created_by":"" },
         {"id":3,"name":"Hotel Plaza","type":"hotel","description":"","lat":"", "lon":"","related_sector":"","available":"","updated_at":"","updated_by":"","created_at":"", "created_by":"" },
-        {"id":4,"name":"Rinconada","type":"departament","description":"","lat":"", "lon":"","related_sector":"","available":"","updated_at":"","updated_by":"","created_at":"", "created_by":"" },
+        {"id":4,"name":"Rinconada","type":"departamento","description":"","lat":"", "lon":"","related_sector":"","available":"","updated_at":"","updated_by":"","created_at":"", "created_by":"" },
         {"id":5,"name":"Todos Juntos","type":"camping","description":"","lat":"", "lon":"","related_sector":"","available":"","updated_at":"","updated_by":"","created_at":"", "created_by":"" },
         {"id":6,"name":"La Gran Fogate","type":"camping","description":"","lat":"", "lon":"","related_sector":"","available":"","updated_at":"","updated_by":"","created_at":"", "created_by":"" },
         {"id":7,"name":"Hotel Marea","type":"hotel","description":"","lat":"", "lon":"","related_sector":"","available":"","updated_at":"","updated_by":"","created_at":"", "created_by":"" },
@@ -21,12 +22,12 @@ export class PropertyService{
         {"id":15,"name":"La Posada de los Robles","type":"hotel","description":"","lat":"", "lon":"","related_sector":"","available":"","updated_at":"","updated_by":"","created_at":"", "created_by":"" },
         {"id":16,"name":"Complejo Sierras Blancas","type":"departament","description":"","lat":"", "lon":"","related_sector":"","available":"","updated_at":"","updated_by":"","created_at":"", "created_by":"" },
         {"id":17,"name":"Hotel Colonos","type":"hotel","description":"","lat":"", "lon":"","related_sector":"","available":"","updated_at":"","updated_by":"","created_at":"", "created_by":"" },
-        {"id":18,"name":"Lo del Ruso","type":"departament","description":"","lat":"", "lon":"","related_sector":"","available":"","updated_at":"","updated_by":"","created_at":"", "created_by":"" },
-        {"id":19,"name":"Kume Ruca","type":"departament","description":"","lat":"", "lon":"","related_sector":"","available":"","updated_at":"","updated_by":"","created_at":"", "created_by":"" },
+        {"id":18,"name":"Lo del Ruso","type":"departamento","description":"","lat":"", "lon":"","related_sector":"","available":"","updated_at":"","updated_by":"","created_at":"", "created_by":"" },
+        {"id":19,"name":"Kume Ruca","type":"departamento","description":"","lat":"", "lon":"","related_sector":"","available":"","updated_at":"","updated_by":"","created_at":"", "created_by":"" },
         {"id":20,"name":"Hotel Riviera","type":"hotel","description":"","lat":"", "lon":"","related_sector":"","available":"","updated_at":"","updated_by":"","created_at":"", "created_by":"" },
-        {"id":21,"name":"Costa Ballenas","type":"department","description":"","lat":"", "lon":"","related_sector":"","available":"","updated_at":"","updated_by":"","created_at":"", "created_by":"" },
+        {"id":21,"name":"Costa Ballenas","type":"departmento","description":"","lat":"", "lon":"","related_sector":"","available":"","updated_at":"","updated_by":"","created_at":"", "created_by":"" },
         {"id":22,"name":"Hippocampus Casas de Mar","type":"casa","description":"","lat":"", "lon":"","related_sector":"","available":"","updated_at":"","updated_by":"","created_at":"", "created_by":"" },
-        {"id":23,"name":"Miralmar","type":"department","description":"","lat":"", "lon":"","related_sector":"","available":"","updated_at":"","updated_by":"","created_at":"", "created_by":"" },
+        {"id":23,"name":"Miralmar","type":"departmento","description":"","lat":"", "lon":"","related_sector":"","available":"","updated_at":"","updated_by":"","created_at":"", "created_by":"" },
     ]
 
 
@@ -34,7 +35,14 @@ export class PropertyService{
 
     }
 
-    getProperty(typePropery){
-        
+    getProperty(typeProperty){
+        let foundProperty = [];
+        if (typeProperty == 'all')
+            return this.allProperty;
+        else
+            this.allProperty.forEach(element => {
+                if (element['type'] == typeProperty) foundProperty.push(element);
+            });
+            return foundProperty;
     }
 }
