@@ -20,8 +20,6 @@ export class ListAllComponent {
 
     ngOnInit(): void {
         let propertyType = this.route.snapshot.paramMap.get('typeProperty');
-        console.log(propertyType)
         this.getProperties(propertyType);
-        console.log(this.properties);
     }
 }

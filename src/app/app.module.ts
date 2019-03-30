@@ -1,14 +1,14 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
-
+// components
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { FilterBoxComponent } from './components/filterallbox/filterallbox.component';
 import { ListAllComponent } from './components/listall/listall.component';
 import { NotFoundComponent } from './components/notfound/notfound.component';
-
+import { ProfileComponent } from './components/profile/profile.component';
 // Services
 
 import { PropertyService } from './services/property.service/property.service';
@@ -29,6 +29,7 @@ library.add(fas);
     FilterBoxComponent,
     ListAllComponent,
     NotFoundComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,
