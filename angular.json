@@ -22,9 +22,10 @@
               "src/favicon.ico",
               "src/assets"
             ],
-            "styles": [
-              "node_modules/bulma/css/bulma.css",
+            "styles": [ 
               "node_modules/font-awesome/css/font-awesome.css",
+              "node_modules/bulma/css/bulma.min.css",
+              //"../node_modules/bulma/css/bulma.css", Este estaba puesto antes Gato!
               "src/styles.css"
             ],
             "scripts": [],
