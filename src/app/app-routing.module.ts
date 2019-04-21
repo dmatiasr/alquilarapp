@@ -8,7 +8,7 @@ import { ProfileComponent } from './components/profile/profile.component';
 const routes: Routes = [
   {path:'', component:FilterBoxComponent},
   {path: 'list/:typeProperty', component: ListAllComponent},
-  {path: 'profile/:id', component: ProfileComponent},
+  {path: 'perfil/:id', component: ProfileComponent},
   {path:'**', component:NotFoundComponent}
 ];
 
