@@ -8,10 +8,11 @@ import { Observable } from 'rxjs';
 export class PropertyService{ 
 
     configUrl = "assets/properties.json";
+    url2= "https://rocky-bastion-23623.herokuapp.com/api/property";
     constructor(private http: HttpClient){  
     }
 
     getHTTPproperty(){
-        return this.http.get<Property>(this.configUrl)
+        return this.http.get<Property>(this.url2)
     }
 }
