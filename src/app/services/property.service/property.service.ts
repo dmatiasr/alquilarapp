@@ -13,6 +13,6 @@ export class PropertyService{
     }
 
     getHTTPproperty(){
-        return this.http.get<Property>(this.url2)
+        return this.http.get<Property>(this.configUrl)
     }
 }

@@ -1,6 +1,19 @@
-<div class="section">
-    <article class="" *ngFor="let property of properties">
-        <property-individual [tipo]="'property'" [objeto]="property" ></property-individual>
-     <br>
-    </article>
+<div class="container" style="margin-top: 60px; margin-right: 10px; margin-left: 10px; ">
+    <div class="columns is-mobile">
+        <div class="column is-hidden-mobile has-text-centered">
+            <box-webpage></box-webpage>
+        </div>
+        <div class="column">
+            <div class="tile is-ancestor">
+                <div class="tile is-vertical">
+                    <article *ngFor="let property of properties">
+                    <property-individual [tipo]="'property'" [objeto]="property" ></property-individual>
+                    </article>
+                </div>
+            </div>    
+        </div>
+        <div class="column is-hidden-mobile">
+            <box-webpage></box-webpage>
+        </div>
+    </div>
 </div>
