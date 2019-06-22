@@ -11,7 +11,8 @@ export class Property {
         public updated_at: string,
         public updated_by:string,
         public created_at:string,
-        public created_by: string){
+        public created_by: string,
+        public score: number){
 
     }
 
@@ -29,7 +30,8 @@ export class Property {
                 list[i].updated_at, 
                 list[i].updated_by, 
                 list[i].created_at, 
-                list[i].created_by
+                list[i].created_by,
+                list[i].score,
                 );
             property_array.push(new_property);
         }
