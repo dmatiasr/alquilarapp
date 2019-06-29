@@ -5,7 +5,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { fas } from '@fortawesome/free-solid-svg-icons';
 import { from } from 'rxjs';
-import { ScrollingModule } from '@angular/cdk/scrolling';
+//import { ScrollingModule } from '@angular/cdk/scrolling';
 library.add(fas);
 
 // components
@@ -41,7 +41,7 @@ import { PropertyService } from './services/property.service/property.service';
     AppRoutingModule,
     FontAwesomeModule,
     HttpClientModule,
-    ScrollingModule
+    //ScrollingModule
   ],
   providers: [PropertyService],
   bootstrap: [AppComponent]
